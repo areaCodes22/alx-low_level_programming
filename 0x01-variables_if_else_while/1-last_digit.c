@@ -3,9 +3,9 @@
 #include <stdio.h>
 
 /**
- *main - Entry point
- *
- *Returns:Always 0(Success/correct)
+ * main - Entry point
+ * Description : Last digit of the int n
+ * Returns : Always 0(Success/correct)
  */
 int main(void)
 {
