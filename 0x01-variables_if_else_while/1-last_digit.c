@@ -1,11 +1,34 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
 /**
- * main - Entry point
- * Description : Last digit of the int n
- * Returns : Always 0(Success/correct)
+ * ldigit - desc
+ *
+ * @m: The number to be checked
+ */
+void ldigit(int m)
+{
+	int lst;
+
+	lst = n % 10;
+
+	if (lst > 5)
+	{
+	printf("Last digit of %i is %i and is greater than 5\n", m, lst);
+	}
+	else if (lst == 0)
+	{
+	printf("Last digit of %d is %d and is 0\n", m, lst);
+	}
+	else
+	{
+	printf("Last digit of %d is %d and is less than 6 and not 0\n", m, lst);
+	}
+}
+/**
+ * main - random srand rand
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
@@ -13,19 +36,6 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	/* Last digit codes starts from here */
-	if (n % 10 > 5)
-	{
-		printf("Last digit of %i is %i and is greater than 5\n", n, n % 10);
-	}
-	else if (n % 10 == 0)
-	{
-		printf("Last digit of %i is %i and is 0\n", n, n % 10);
-	}
-	else
-	{
-		printf("Last digit of %i is %i and is less than 6 and not 0\n", n, n % 10);
-	}
-	/* Main returns value */
+	ldigit(n);
 	return (0);
 }
