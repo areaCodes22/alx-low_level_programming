@@ -1,25 +1,27 @@
 #include <stdio.h>
+
 /**
- * main - Advanced combinations of three digit numbers
+ * main - All possible combinations of two two-digit numbers.
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int one;
-	int two;
-	int three;
+	int n;
+	int m;
 
-	for (one = 0; one <= 9; one++)
+	for (n = 0; n < 100; n++)
 	{
-	for (two = one + 1; two <= 9; two++)
+	for (m = 0; m < 100; m++)
 	{
-	for (three = two + 1; three <= 9; three++)
+	if ((n == 0 && m != 0) || (m > n))
 	{
-	putchar(one + '0');
-	putchar(two + '0');
-	putchar(three + '0');
-	if (one < 7)
+	putchar(n / 10 + '0');
+	putchar(n % 10 + '0');
+	putchar(' ');
+	putchar(m / 10 + '0');
+	putchar(m % 10 + '0');
+	if (n < 98)
 	{
 	putchar(',');
 	putchar(' ');
