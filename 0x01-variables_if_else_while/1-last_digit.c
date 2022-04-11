@@ -2,33 +2,9 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * ldigit - desc
+ * main - prints a random number and state whethe positive or negative
  *
- * @m: The number to be checked
- */
-void ldigit(int m)
-{
-	int lst;
-
-	lst = n % 10;
-
-	if (lst > 5)
-	{
-	printf("Last digit of %i is %i and is greater than 5\n", m, lst);
-	}
-	else if (lst == 0)
-	{
-	printf("Last digit of %d is %d and is 0\n", m, lst);
-	}
-	else
-	{
-	printf("Last digit of %d is %d and is less than 6 and not 0\n", m, lst);
-	}
-}
-/**
- * main - random srand rand
- *
- * Return: Always 0 (Success)
+ * Return : 0 Always
  */
 int main(void)
 {
@@ -36,6 +12,19 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	ldigit(n);
+        /* Last digit codes starts from here */
+	if (n % 10 > 5)
+	{
+	printf("Last digit of %i is %i and is greater than 5\n", n, n % 10);
+	}
+	else if (n % 10 == 0)
+	{
+	printf("Last digit of %d is %d and is 0\n", n, n % 10);
+	}
+	else
+	{
+	printf("Last digit of %d is %d and is less than 6 and not 0\n", n, n % 10);
+	}
 	return (0);
 }
+
