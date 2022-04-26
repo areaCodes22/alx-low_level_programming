@@ -1,26 +1,24 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
- *print_diagsums - prints the sum of the two diagonals
- *@a: string
- *@size: size of square
- *
- *Return: nothing
+ * print_diagsums - Prints the sum of the two diagonals.
+ * @a: Array diag.
+ * @size: Array tamano.
  */
+
 void print_diagsums(int *a, int size)
 {
-	int x, y, sum1, sum2;
-	sum1 = 0;
-	sum2 = 0;
 
-	for (x = 0; x < size; x++)
+	int i, j, k;
 
-		sum1 += a[(size + 1) * x];
+	j = k = 0;
 
-	for (y = 0; y < size; y++)
+		for (i = 0; i < size; i++)
+		{
+			j += a[i * (size + 1)];
+				k += a[(i + 1) * (size - 1)];
+		}
 
-		sum2 += a[(size - 1) * (y + 1)];
+	printf("%d, %d\n", j, k);
 
-	printf("%d, %d\n", sum1, sum2);
 }
