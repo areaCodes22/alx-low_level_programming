@@ -31,4 +31,7 @@ int main(void)
 	return (0);
 }
 
+<<<<<<< HEAD
 >>>>>>> 4325fbfffbd4095fe365b6efda1d26c83dc2ea7c
+=======
+>>>>>>> 9bbfbaccf6889ac4a617c800809a9c624a40a042
