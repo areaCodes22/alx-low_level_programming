@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+#incude <stdio.h>
 
-
-=======
->>>>>>> 6abb8b4e247d7bfc0a0577071aeba5e9bf68da0f
 int _putchar(char c);
 int _islower(int c);
 int _isalpha(int c);
