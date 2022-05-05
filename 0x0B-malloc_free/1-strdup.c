@@ -1,45 +1,29 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
 /**
- * _strlen - Function string.
- * @s: Value string check.
- * Return: String.
- */
-int _strlen(char *s)
-{
-
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-		;
-
-		return (i);
-
-}
-/**
- * _strdup - Duplicate string.
- * @str: String to duplicate.
- * Return: *p Duplicate.
+ * _strdup - returns a pointer to a newly allocated space in memory.
+ * @str: string.
+ *
+ * Return: pointer of an array of chars
  */
 char *_strdup(char *str)
 {
-
-	int i;
-	int length;
-	char *pd;
+	char *strout;
+	unsigned int i, j;
 
 	if (str == NULL)
 		return (NULL);
 
-	length = _strlen(str);
+	for (i = 0; str[i] != '\0'; i++)
+		;
 
-	pd = malloc(sizeof(char) * length + 1);
-	if (pd == NULL)
+	strout = (char *)malloc(sizeof(char) * (i + 1));
+
+	if (strout == NULL)
 		return (NULL);
 
-	for (i = 0; i < length; i++)
-		pd[i] = str[i];
-	pd[length] = str[length];
+	for (j = 0; j <= i; j++)
+		strout[j] = str[j];
 
-	return (pd);
-
+	return (strout);
+}
