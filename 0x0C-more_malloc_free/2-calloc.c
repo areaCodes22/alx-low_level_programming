@@ -1,49 +1,51 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include "main.h"
 
 /**
- * _calloc - Allocates memory for an array
- * @nmemb: Size of array.
- * @size: Size.
- * Return: P.
- */
+ * _memset - fills memory with a constant byte
+ *
+ * @s: input pointer that represents memory
+ *     block to fill
+ * @b: characters to fill
+ * @n: number of bytes to be filled
+ *
+ * Return: A pointer to the filled memory area
+*/
+
+char *_memset(char *s, char b, unsigned int n)
+{
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+		s[i] = b;
+	return (s);
+}
+
+/**
+ * _calloc - a function that allocates
+ *           memory for an array using malloc
+ *
+ *           It is basically the equivalent to
+ *           malloc followed by memset
+ *
+ * @nmemb: size of array
+ * @size: size of each element
+ *
+ * Return: pointer with new allocated memory
+ *         or NULL if it fails
+*/
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
+	char *p;
 
-	unsigned int i;
+	if (nmemb == 0 || size == 0)
+		return (NULL);
 
-	i = 0;
-        while (i < size)
-	{
-		if (i % 10)
-		{
-			printf(" ");
-		}
-		if (!(i % 10) && i)
-		{
-			printf("\n");
-		}
-		printf("0x%02x", nmemb[i]);
-		i++;
-	}
-}
-/**
- * main - check the code
- *
- * Return: Always 0
- */
-int main(void)
-{
-	char *a;
+	p = malloc(nmemb * size);
+	if (p == NULL)
+		return (NULL);
 
-	a = _calloc(98, sizeof(char));
-	strcpy(a, "Best");
-	strcpy(a + 4, "School! :)\n");
-	a[97] = '!';
-	_calloc(a, 98);
-	free(a);
-	return (0);
+	_memset(p, 0, nmemb * size);
+
+	return (p);
 }
