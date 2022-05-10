@@ -70,4 +70,4 @@ int _length(char *str)
 	return (i);
 }
 
-#endif /* HOLBERTON_H */
+#endif
