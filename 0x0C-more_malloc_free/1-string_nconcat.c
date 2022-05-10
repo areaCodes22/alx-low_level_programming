@@ -1,6 +1,23 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 
+/**
+ * _strlen - Function string.
+ * @s: Value string check.
+ * Return: String.
+ */
+int _strlen(char *s)
+{
+
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+		;
+
+		return (i);
+
+}
 /**
  * string_nconcat - Concatenate two strings.
  * @s1: My first string.
